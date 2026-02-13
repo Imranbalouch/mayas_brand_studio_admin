@@ -1,0 +1,106 @@
+
+
+<div class="container-xxl flex-grow-1 container-p-y"> 
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6"> 
+                    <h3 class="mb-2"><g-t>all_menus</g-t></h3>
+                </div> 
+            </div>
+       </div> 
+ <hr>
+    <div class="widget-wrapper">
+    <div class="container-xxl flex-grow-1 container-p-y"> 
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="widget-content">
+                    <div class="table-responsive">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5 class="mb-0" id="detail_id"><g-t>all_menus</g-t></h5> 
+                        </div> 
+                        <hr>
+                    </div> 
+                    <input type="hidden" id="txt_id">
+                        <div class="dd nestable" id="nestable">
+                            
+                        </div> 
+                        <button type="button" id="btn_update" onclick="update_record(); return false;" class="btn btn-primary btn-sm">update</button> 
+                    </div>
+
+                    <div class="row output-container d-none">
+                        <div class="col-md-offset-1 col-md-10">
+                        <h2 class="text-center">Output:</h2>
+                        <form class="form">
+                            <textarea class="form-control" id="json-output" rows="5"></textarea>
+                        </form>
+                        </div>
+                    </div> 
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="widget-content d-none">
+                  
+                        <h5 class="mb-0" id="detail_id"><g-t>languages</g-t></h5> 
+                        <hr> 
+                        <div> 
+                            <div class=" selectpicker w-100"> 
+                                <select class="  selectpicker w-100" data-style="btn-default" id="txt_lang_id" name="txt_lang_id"></select>
+                            </div>  
+                    </div>
+                </div>
+
+
+                <div class="widget-content mt-2">
+                    <div class="table-responsive">
+                        <h5 class="mb-0" id="detail_id"><g-t>add_new</g-t></h5> 
+                        <hr> 
+                        <div  > 
+                            <div class="fv-row col-md-12">
+                               <label for="txt_title" class="form-label">Title <span class="text-danger">*</span></label> 
+                                <input class=" form-control mb-2" placeholder="Title" maxlength="30"  id="txt_title" name="txt_title" type="text" value="">
+                      </div> 
+                            <div class="fv-row col-md-12">
+                              <label for="txt_url" class="form-label">URL</label> 
+                                    <input class=" form-control mb-2" id="txt_url" placeholder="URL"  name="txt_url" type="text" value="">
+                            </div> 
+                            <div class="fv-row col-md-12">
+                               <label for="txt_icon_font" class="form-label">Icon</label> 
+                                    <input class="form-control mb-2" name="txt_icon_font" placeholder="Icon" id="txt_icon_font" type="text" value="">
+                     </div> 
+                            <div class="fv-row col-md-12">
+                               <label for="txt_css_class" class="form-label">CSS class</label>
+                              <input class="form-control mb-2" id="txt_css_class" placeholder="CSS class" name="txt_css_class" type="text" value="">
+                     </div> 
+                            <div class="fv-row col-md-12">
+                              <label for="cmb_target" class="form-label">Target</label>
+                                  <select class="form-control mb-2" name="cmb_target" id="cmb_target">
+                                  <option value="_self" selected="selected">Open link directly</option>
+                                  <option value="_blank">Open link in new tab</option>
+                                  </select>
+                     </div> 
+                            <div class="text-end mt-2"> 
+                                <a class="btn btn-primary btn-add btn-sm" href="#" onclick="add_this();"><g-t>add_new</g-t></a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+  

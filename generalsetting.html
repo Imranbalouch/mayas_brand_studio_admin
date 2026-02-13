@@ -1,0 +1,29 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-header">
+                    <h3 class="mb-4">General Setting</h3>
+                </div>
+                <div class="card-body">
+                    <form id="generalSettingForm">
+                        <div class="mb-3">
+                            <label for="api_base_url" class="form-label">API Base URL</label>
+                            <input type="hidden" name="types[]" value="api_base_url">
+                            <input type="url" class="form-control" id="api_base_url" name="api_base_url"
+                                placeholder="https://example.com/api">
+                        </div>
+                        <div class="mb-3">
+                            <label for="api_base_product_url" class="form-label">API Base for Product</label>
+                            <input type="hidden" name="types[]" value="api_base_product_url">
+                            <input type="url" class="form-control" id="api_base_product_url" name="api_base_product_url"
+                                placeholder="https://example.com/api">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

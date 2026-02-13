@@ -1,0 +1,134 @@
+
+@media(max-width:991px) {
+    .content-wrapper {
+        width: 100%;
+    }
+    .upload-file-card-row {
+        grid-template-columns: repeat(3,1fr);
+    }
+    .img-upload-files {
+        width: 100%;
+    }
+    .img-upload-files img{
+        margin: auto;
+        display: block;
+    }
+}
+
+@media(max-width:768px) {
+    .upload-file-card-row {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media(max-width:768px) {
+    .upload-file-card-row {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .header {
+        padding: 12px 25px;
+    }
+
+    .custom-dropdown ul::before {
+        left: unset;
+        right: 0;
+        width: 57%;
+    }
+
+    .product-filter span {
+        white-space: nowrap;
+    }
+
+    .order-summary-item {
+        flex-wrap: wrap;
+    }
+
+    .order-summary-item .summary-image {
+        width: max-content;
+        margin: auto;
+    }
+
+    .order-summary-item .summary-image img {
+        width: 100px;
+    }
+
+    .flex-wrap-sm {
+        flex-wrap: wrap;
+    }
+
+    .product-sidebar {
+        min-height: fit-content;
+        width: 100%;
+        overflow-x: scroll;
+        margin-bottom: 20px;
+    }
+
+    .product-content {
+        width: 100%;
+    }
+
+    #add-products-navs {
+        display: flex;
+        flex-direction: unset;
+        border-bottom: none;
+        width: max-content;
+        overflow-x: hidden;
+    }
+
+    #add-products-navs button {
+        width: max-content;
+    }
+
+    .product-content {
+        padding: 0;
+    }
+
+    .notification-box {
+        right: -60px;
+        z-index: -1;
+        width: 100%;
+        min-width: 300px;
+    }
+
+    .product-desc-tb {
+        width: 150px;
+        overflow: hidden;
+    }
+
+    .product-desc-tb p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+    .w-sm-100 {
+        width: 100% !important;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .selecthome-page-btn {
+        margin-top: 0;
+    }
+
+    .breadcrumbs ul li {
+        display: flex;
+    }
+
+    .breadcrumbs ul li a {
+        width: max-content;
+        display: block;
+    }
+
+    /* .home-slider-box {
+        flex-wrap: wrap;
+    } */
+
+    .home-slider-box input[type="file"] {
+        max-width: 100%;
+    }
+
+}

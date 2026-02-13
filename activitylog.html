@@ -1,0 +1,59 @@
+<style>
+    table.dataTable tbody tr.odd td.dataTables_empty::before {
+        content: none !important;
+    }
+</style>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <!-- DataTable with Buttons -->
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="mb-2"><g-t>Activity Logs</g-t></h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-datatable table-responsive pt-0">
+            <table class="datatables-basic table table-bordered table" id="Table_View">
+                <thead>
+                    <tr>
+                        <th width="5%"></th>
+                        <th width="50%"><g-t>Subject Type</g-t></th>
+                        <th width="25%"><g-t>Event</g-t></th>
+                        <th width="20%"><g-t>User Name</g-t></th>
+                        <th width="20%"><g-t>Created At</g-t></th>
+                        <th width="20%"><g-t>View</g-t></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Data will be populated here via AJAX -->
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+    <!-- shortcodemodal -->
+    <div class="modal" tabindex="-1" id="activity-log-modal">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-2">Activity Log Detail</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="activity-log">
+                        <div class="col-md-12">
+                            <div class="card mb-3">
+                                <div class="card-body" id="activity-log-detail">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

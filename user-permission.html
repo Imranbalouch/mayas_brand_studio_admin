@@ -1,0 +1,280 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<style>
+    .toastify {
+        border-radius: 10px !important; /* Customize as needed */
+    }
+
+    .toastify button {
+        color: #fff;
+    }
+</style>
+
+<div style="overflow: h;" class="main-content create-purchase-main">
+    <div class="w-100 d-flex justify-content-between align-items-center flex-wrap gap-lg-0 gap-4">
+        <div class="purchase-icon-main">
+            <h2 class="purchase-title">Users and permissions</h2>
+        </div>
+        <div class="permission-heading-main">
+            <h5>Permissions</h5>
+            <p>Manage what users can see or do in your store.</p>
+        </div>
+    </div>
+    <div class="border comment-profile-main mb-5">
+        <div class="comment-header-main d-block">
+            <div class="store-owner-main">
+                <h5>Store owner</h5>
+                <a data-bs-toggle="modal" href="#transferModal">Transfer ownership</a>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <span>NI</span>
+                <div class="comment-owner-main">
+                    <a class="EditStaff" href="">Nomi Imran</a>
+                    <p>Last login was Wednesday, March 19, 2025 4:13 PM GMT+6</p>
+                </div>
+            </div>
+        </div>
+        <div class="comment-footer-main">
+            <span>Note: some owner permissions can't be assigned to staff</span>
+        </div>
+    </div>
+    <div class="widget-content border">
+        <div class="comment-profile-main">
+            <div class="comment-header-main d-block p-0">
+                <div class="store-owner-main">
+                    <h5 id="Staffcount">Staff (1 of 15)</h5>
+                    <a class="new-add-staff" href="">Add staff</a>
+                </div>
+                <div id="UserName">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="widget-content border">
+        <div class="pos-heading-main">
+            <h4>POS app-only staff</h4>
+            <p>Add staff that only have access to the POS app and customize their permissions</p>
+        </div>
+        <div class="point-sale-main">
+            <div class="d-flex align-items-center gap-3">
+                <div class="point-img">
+                    <img src="./assets/images/point-sale-img.png" alt="point-sale-img">
+                </div>
+                <span>Point of Sale</span>
+            </div>
+            <a href="">Open</a>
+        </div>
+    </div>
+    <div class="widget-content border">
+        <div class="collaborators-main">
+            <div class="pos-heading-main">
+                <h4>POS app-only staff</h4>
+                <p>Add staff that only have access to the POS app and customize their permissions</p>
+            </div>
+            <div class="collab-radio-main">
+                <label class="custom-radio">
+                    <input name="collab-radio" type="radio">
+                    Anyone can send a collaborator request
+                </label>
+                <label class="custom-radio">
+                    <input name="collab-radio" type="radio">
+                    Only people with a collaborator request code can send a collaborator request
+                </label>
+            </div>
+            <div class="alert-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M8 12a.75.75 0 0 1-.75-.75v-3.5a.75.75 0 0 1 1.5 0v3.5a.75.75 0 0 1-.75.75"></path>
+                    <path d="M7 5a1 1 0 1 1 2 0 1 1 0 0 1-2 0"></path>
+                    <path fill-rule="evenodd"
+                        d="M15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0m-1.5 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 1 1 11 0"></path>
+                </svg>
+                <p>To protect your store's security, all collaborator requests now require a code by default.</p>
+            </div>
+            <div class="request-code-main">
+                <div class="store-owner-main">
+                    <h5>Collaborator Request Code</h5>
+                    <a data-bs-toggle="modal" href="#GenerateModal">Generate new code</a>
+                </div>
+                <div class="request-input">
+                    <input id="GenerateCodeInput" class="form-control" readonly type="text">
+                    <a onclick="copyCode()" href="javascript:;">
+                        <svg width="16" height="16" fill="#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4.515 2.75a2 2 0 0 1 1.985-1.75h3a2 2 0 0 1 1.987 1.77l-.002-.02h.265a2.25 2.25 0 0 1 2.25 2.25v7.75a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25v-7.75a2.25 2.25 0 0 1 2.25-2.25zm1.985-.25h3a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5m-1.987 1.73.002.02h-.265a.75.75 0 0 0-.75.75v7.75c0 .414.336.75.75.75h7.5a.75.75 0 0 0 .75-.75v-7.75a.75.75 0 0 0-.75-.75h-.265a2 2 0 0 1-1.985 1.75h-3a2 2 0 0 1-1.987-1.77">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <p>Share this code to allow someone to send you a collaborator request. You'll still need to review and
+                    approve their request.</p>
+            </div>
+        </div>
+    </div>
+    <div class="permission-heading-main">
+        <h5>Login services</h5>
+        <p>Allow staff to use external services to log in to Shopify.</p>
+    </div>
+    <div class="widget-content border">
+        <table class="table table-text">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th><span>Name</span></th>
+                    <th><span>Status</span></th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="table-img">
+                            <img src="./assets/images/google-img.png" alt="google-img">
+                        </div>
+                    </td>
+                    <td><span>Google Apps</span></td>
+                    <td>
+                        <p>Disabled: Staff can't use Google Apps to log in</p>
+                    </td>
+                    <td><a id="EditTableButton" href="">Edit</a></td>
+                </tr>
+                <tr style="display: none;" id="EditTable" class="bg-tr">
+                    <td class="pb-0" colspan="4">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="form-check m-0">
+                                            <input class="form-check-input select-all" type="checkbox">
+                                            Enable Google Apps for login
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="store-owner-main mb-2">
+                                            <h5 style="font-weight: 400;">What is your Google Apps domain?</h5>
+                                        </div>
+                                        <div class="request-input">
+                                            <input class="form-control" placeholder="example.com" type="text">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-save">
+                                            <a class="table-save" href="">Save</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>    
+<!-- Transfer Modal Start -->
+<div class="modal fade" id="transferModal" aria-hidden="true" aria-labelledby="transferModalLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form id="transferStore" action="">
+            <div class="modal-content">
+                <div class="modal-header custom-modal-header justify-content-between">
+                    <h5 style="font-size: 16px;" class="modal-title custom-modal-title" id="exampleModalLabel">Transfer
+                        store ownership</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="transfer-store-main">
+                        <div class="alert-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                <path d="M8 4.75a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75">
+                                </path>
+                                <path d="M9 11.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"></path>
+                                <path fill-rule="evenodd"
+                                    d="M8 1.5c-1.045 0-1.784.702-2.152 1.447a449 449 0 0 1-2.005 3.847l-.028.052c-.892 1.703-1.798 3.432-2.008 3.856-.372.752-.478 1.75.093 2.614.57.863 1.542 1.184 2.464 1.184h7.272c.922 0 1.895-.32 2.465-1.184s.464-1.862.092-2.614c-.21-.424-1.113-2.147-2.004-3.847l-.032-.061a449 449 0 0 1-2.005-3.847c-.368-.745-1.107-1.447-2.152-1.447m-.808 2.112c.404-.816 1.212-.816 1.616 0 .202.409 1.112 2.145 2.022 3.88.908 1.734 1.817 3.467 2.018 3.875.404.817 0 1.633-1.212 1.633h-7.272c-1.212 0-1.617-.816-1.212-1.633.202-.408 1.113-2.147 2.023-3.883.908-1.733 1.815-3.464 2.017-3.872">
+                                </path>
+                            </svg>
+                            <p>When the transfer is complete, you will lose your unrestricted access to the store.</p>
+                        </div>
+                        <p>You will receive collaborator access to the store after the new owner selects a plan. Until
+                            then, access will be restricted.</p>
+                        <span>The new store owner will be able to:</span>
+                        <ul>
+                            <li>Remove you from the store or change your permissions</li>
+                            <li>View or edit credit card and banking information</li>
+                            <li>Pause or close the store</li>
+                        </ul>
+                        <h4>NEW STORE OWNER</h4>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-input form-group">
+                                    <div class="input">
+                                        <label>Email</label>
+                                        <input name="email" type="text" class="form-control">
+                                        <span class="error-txt"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-input form-group">
+                                    <label>First name</label>
+                                    <input name="company" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-input form-group">
+                                    <label>Last name</label>
+                                    <input name="company" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-input form-group mb-0">
+                                    <label>Enter your password to confirm:</label>
+                                    <input name="company" type="password" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer custom-modal-footer">
+                    <button type="button" class="btn btn-dark btn-modal-text" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" id="export-product" class="btn btn-primary btn-modal-text">Transfer store
+                        ownership</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Transfer Modal End -->
+
+<!-- Generate Modal Start -->
+<div class="modal fade" id="GenerateModal" aria-hidden="true" aria-labelledby="GenerateModalLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="modal-header custom-modal-header justify-content-between">
+                <h5 style="font-size: 16px;" class="modal-title custom-modal-title" id="exampleModalLabel">Transfer
+                    store ownership</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="transfer-store-main">
+                    <p>After generating a new code, the previous code will no longer be valid. New collaborator requests
+                        must use the new code.</p>
+                </div>
+            </div>
+            <div class="modal-footer custom-modal-footer">
+                <button type="button" class="btn btn-dark btn-modal-text" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" data-bs-dismiss="modal" onclick="GenerateCode()" class="btn btn-primary btn-modal-text">Generate
+                    Code</button>
+            </div>
+        </div>
+    </div>
+    <!-- Generate Modal End -->

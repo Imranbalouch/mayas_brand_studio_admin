@@ -1,0 +1,75 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-4"><g-t>WhatsApp</g-t></h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="javascript:void(0);">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="javascript:void(0);" id="plugin">Plugin</a>
+                  </li>
+                  <li class="breadcrumb-item active">WhatsApp</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">What you need to make WhatsApp work?</h5>
+            <p class="card-text">To configure WhatsApp, you need to provide the following settings:</p>
+            <ul>
+                <li>Verified Business Phone Number</li>
+                <!-- <li>[whatsapp-plugin phone=""][/whatsapp-plugin]</li> -->
+            </ul>
+            <hr>
+            <form action="" id="whatsapp-form" method="post">
+                <div class="col-12 d-flex align-items-center">
+                    <div class="form-group mt-3">
+                        <label for="phone-number">Verified Business Phone Number / Link </label>
+                        <input type="text" id="phone-number" name="phone_number" required class="form-control" placeholder="ex: +1234567890">
+                    </div>
+                    <div class="form-group mx-2">
+                        <label class="required form-label" for="">{{$phone_number}}<span></span></label>
+                    </div>
+                </div>                
+                <div class="mt-6 fv-row col-12 d-flex align-items-center">
+                    <div class="form-group">
+                        <label class="required form-label" for="">WhatsApp Logo<span></span></label>
+                        <div class="input-group custome-filemanager" data-type="image">
+                            <div class="input-group-prepend">
+                                <div
+                                    class="input-group-text bg-soft-secondary font-weight-medium">
+                                    Browse
+                                </div>
+                            </div>
+                            <div class="form-control file-amount">Choose File</div>
+                            <input type="hidden" name="whatsapp_logo" class="selected-files">
+                        </div>
+                        <div class="d-flex flex-wrap gap-4 pt-4 filemanager-image-preview">
+                        </div>
+                    </div>
+                    <div class="form-group mx-2">
+                        <label class="required form-label" for="">{{$icon}}<span></span></label>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-2">
+                    <div class="form-group">
+                        <label>Css <small>(without style tag)</small></label>
+                        <textarea name="custom_css" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-2">
+                    <div class="form-group">
+                        <label>Html Code</label>
+                        <textarea name="html_code" rows="10" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>
+

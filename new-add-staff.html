@@ -1,0 +1,286 @@
+<div class="main-content create-purchase-main">
+    <form id="addStaff" action="">
+        <div class="w-100 d-flex justify-content-between align-items-center flex-wrap gap-lg-0 gap-4 mb-5">
+            <div class="purchase-icon-main mb-0">
+                <span onclick="window.history.back();" style="cursor: pointer;">
+                <svg width="16" height="16" fill="#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M14.75 8a.75.75 0 0 1-.75.75h-9.69l2.72 2.72a.749.749 0 1 1-1.06 1.06l-4-4a.747.747 0 0 1 0-1.06l4-4a.749.749 0 1 1 1.06 1.06l-2.72 2.72h9.69a.75.75 0 0 1 .75.75">
+                    </path>
+                </svg>
+            </span>
+                <h2 class="purchase-title">Users and permissions</h2>
+            </div>
+            <button type="button" class="btn btn-primary create-purchase-order">
+                <svg class="me-2" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.00024 2V14.0002" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 8.00006H14.0002" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <g-t>Send Invited</g-t>
+            </button>
+        </div>
+        <div class="permission-heading-main">
+            <h5>Staff</h5>
+            <p>Give staff access to your store by sending them an invitation. If you’re working with a designer,
+                developer, or marketer, find out how to <a href="">give collaborator access to your store.</a></p>
+        </div>
+        <div class="widget-content border">
+            <div class="transfer-store-main">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-input form-group">
+                            <label>First name</label>
+                            <input name="first_name" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-input form-group">
+                            <label>Last name</label>
+                            <input name="last_name" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-input form-group">
+                            <label>Enter the staff member's first and last name as they appear on their
+                                government-issued ID.</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-input form-group">
+                            <div class="input">
+                                <label>Email</label>
+                                <input name="email" type="text" class="form-control">
+                                <span class="error-txt"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="widget-content border">
+            <div class="pos-heading-main">
+                <h4>POS app-only staff</h4>
+                <p>Add staff that only have access to the POS app and customize their permissions</p>
+            </div>
+            <div class="store-permission-main">
+                <!-- Permissions will be dynamically loaded here -->
+                <div id="permissionsContainer"></div>
+            </div>
+        </div>
+        <div class="widget-content border">
+            <div class="manage-point-sale">
+                <div class="permission-heading-main">
+                    <h5>Point of Sale</h5>
+                </div>
+                <div class="manage-permission-main">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input id="AccessCheckbox" class="form-check-input" type="checkbox" value="">
+                            <span>Access Point of Sale</span>
+                        </label>
+                    </div>
+                    <div style="display: none;" class="setuprole">
+                        <div class="form-check left-child">
+                            <label class="form-check-label">
+                                <input id="SetupCheckbox" class="form-check-input permission-checkbox" type="checkbox"
+                                    value="">
+                                <span>Set up new or updated POS devices</span>
+                                <p>Staff set up devices by logging in to the POS app with their Shopify username and
+                                    password. <a href="">Learn more</a></p>
+                            </label>
+                        </div>
+                        <div style="display: none;" class="alert-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                <path d="M8 4.75a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75">
+                                </path>
+                                <path d="M9 11.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"></path>
+                                <path fill-rule="evenodd"
+                                    d="M8 1.5c-1.045 0-1.784.702-2.152 1.447a449 449 0 0 1-2.005 3.847l-.028.052c-.892 1.703-1.798 3.432-2.008 3.856-.372.752-.478 1.75.093 2.614.57.863 1.542 1.184 2.464 1.184h7.272c.922 0 1.895-.32 2.465-1.184s.464-1.862.092-2.614c-.21-.424-1.113-2.147-2.004-3.847l-.032-.061a449 449 0 0 1-2.005-3.847c-.368-.745-1.107-1.447-2.152-1.447m-.808 2.112c.404-.816 1.212-.816 1.616 0 .202.409 1.112 2.145 2.022 3.88.908 1.734 1.817 3.467 2.018 3.875.404.817 0 1.633-1.212 1.633h-7.272c-1.212 0-1.617-.816-1.212-1.633.202-.408 1.113-2.147 2.023-3.883.908-1.733 1.815-3.464 2.017-3.872">
+                                </path>
+                            </svg>
+                            <p>This staff member also needs access to all the apps that are integrated with the Point of
+                                Sale app. <a href="">Manage Apps</a></p>
+                        </div>
+                        <label class="manage-role" for="">POS Role <a href="">Manage POS Roles</a></label>
+                        <select class="form-control selectpicker">
+                            <option value="Full permission">Full permission</option>
+                            <option value="Limited permission">Limited permission</option>
+                            <option selected value="Accociates (default)">Accociates (default)</option>
+                        </select>
+                        <a id="showPermission" class="show-permission" href="">
+                            Show permission
+                            <svg width="16" height="16" fill="rgba(0, 91, 211, 1)" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M3.72 6.47a.75.75 0 0 1 1.06 0l3.47 3.47 3.47-3.47a.749.749 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06">
+                                </path>
+                            </svg>
+                        </a>
+                        <a id="hidePermission" class="show-permission" href="">
+                            Hide permission
+                            <svg width="16" height="16" fill="rgba(0, 91, 211, 1)" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M3.72 6.47a.75.75 0 0 1 1.06 0l3.47 3.47 3.47-3.47a.749.749 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06">
+                                </path>
+                            </svg>
+                        </a>
+                        <div id="Managercollapse">
+                            <div class="point-heading-main">
+                                <h4>Manager approval</h4>
+                                <span>Denied</span>
+                            </div>
+                            <div class="collapse-main">
+                                <div class="point-permission-main collapse-head">
+                                    <h4>Checkout</h4>
+                                    <span class="point-arrow">
+                                        <span>0 of 4 allowed</span>
+                                        <svg width="16" height="16" fill="#3b4056" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M3.72 6.47a.75.75 0 0 1 1.06 0l3.47 3.47 3.47-3.47a.749.749 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="collapse-body">
+                                    <div class="point-heading">
+                                        <h4>Add custom sales</h4>
+                                        <span>
+                                            <svg fill="#3b4056" width="14" height="14"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0m-3.677 4.383a5.5 5.5 0 0 1-7.706-7.706zm1.06-1.06-7.706-7.706a5.5 5.5 0 0 1 7.706 7.706">
+                                                </path>
+                                            </svg>
+                                            Denied
+                                        </span>
+                                    </div>
+                                    <div class="point-heading">
+                                        <h4>Ship to customer</h4>
+                                        <span>
+                                            <svg fill="#3b4056" width="14" height="14"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0m-3.677 4.383a5.5 5.5 0 0 1-7.706-7.706zm1.06-1.06-7.706-7.706a5.5 5.5 0 0 1 7.706 7.706">
+                                                </path>
+                                            </svg>
+                                            Denied
+                                        </span>
+                                    </div>
+                                    <div class="point-heading">
+                                        <h4>Edit taxes</h4>
+                                        <span>
+                                            <svg fill="#3b4056" width="14" height="14"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0m-3.677 4.383a5.5 5.5 0 0 1-7.706-7.706zm1.06-1.06-7.706-7.706a5.5 5.5 0 0 1 7.706 7.706">
+                                                </path>
+                                            </svg>
+                                            Denied
+                                        </span>
+                                    </div>
+                                    <div class="point-heading">
+                                        <h4>Accept offline credit and debit payments</h4>
+                                        <span>
+                                            <svg fill="#3b4056" width="14" height="14"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0m-3.677 4.383a5.5 5.5 0 0 1-7.706-7.706zm1.06-1.06-7.706-7.706a5.5 5.5 0 0 1 7.706 7.706">
+                                                </path>
+                                            </svg>
+                                            Denied
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse-main">
+                                <div class="point-permission-main collapse-head">
+                                    <h4>Discount</h4>
+                                    <span class="point-arrow">
+                                        <span>0 of 4 allowed</span>
+                                        <svg width="16" height="16" fill="#3b4056" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M3.72 6.47a.75.75 0 0 1 1.06 0l3.47 3.47 3.47-3.47a.749.749 0 1 1 1.06 1.06l-4 4a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 0-1.06">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="collapse-body">
+                                    <div class="point-heading">
+                                        <h4>Add custom sales</h4>
+                                        <span>
+                                            <svg fill="#3b4056" width="14" height="14"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0m-3.677 4.383a5.5 5.5 0 0 1-7.706-7.706zm1.06-1.06-7.706-7.706a5.5 5.5 0 0 1 7.706 7.706">
+                                                </path>
+                                            </svg>
+                                            Denied
+                                        </span>
+                                    </div>
+                                    <div class="point-heading">
+                                        <h4>Ship to customer</h4>
+                                        <span>
+                                            <svg fill="#3b4056" width="14" height="14"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0m-3.677 4.383a5.5 5.5 0 0 1-7.706-7.706zm1.06-1.06-7.706-7.706a5.5 5.5 0 0 1 7.706 7.706">
+                                                </path>
+                                            </svg>
+                                            Denied
+                                        </span>
+                                    </div>
+                                    <div class="point-heading">
+                                        <h4>Edit taxes</h4>
+                                        <span>
+                                            <svg fill="#3b4056" width="14" height="14"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0m-3.677 4.383a5.5 5.5 0 0 1-7.706-7.706zm1.06-1.06-7.706-7.706a5.5 5.5 0 0 1 7.706 7.706">
+                                                </path>
+                                            </svg>
+                                            Denied
+                                        </span>
+                                    </div>
+                                    <div class="point-heading">
+                                        <h4>Accept offline credit and debit payments</h4>
+                                        <span>
+                                            <svg fill="#3b4056" width="14" height="14"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0m-3.677 4.383a5.5 5.5 0 0 1-7.706-7.706zm1.06-1.06-7.706-7.706a5.5 5.5 0 0 1 7.706 7.706">
+                                                </path>
+                                            </svg>
+                                            Denied
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pin-main">
+                            <h5>PIN</h5>
+                            <p>Staff need a unique 4-6 digits PIN to access the Point of Sale app.</p>
+                            <div class="input-button">
+                                <input id="pinInput" class="form-control" type="text" readonly>
+                                <button type="button" onclick="generatePin()">Generate random PIN</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end align-items-center gap-4">
+            <button id="UserPermission" type="button" class="btn btn-light create-purchase-order">
+                <g-t>Cancle</g-t>
+            </button>
+            <button type="submit" class="btn btn-primary create-purchase-order">
+                <g-t>Send Invited</g-t>
+            </button>
+        </div>
+    </form>
+</div>

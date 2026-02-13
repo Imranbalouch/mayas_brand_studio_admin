@@ -1,0 +1,65 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-2"><g-t>SMTP</g-t></h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="javascript:void(0);">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="javascript:void(0);" id="plugin">Plugin</a>
+                  </li>
+                  <li class="breadcrumb-item active">SMTP</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">What you need to make SMTP work?</h5>
+            <p class="card-text">To configure SMTP, you need to provide the following settings:</p>
+            <ul>
+                <li>SMTP Server</li>
+                <li>SMTP Port</li>  
+                <li>SMTP Encryption</li>
+                <li>SMTP Username</li>
+                <li>SMTP Password</li>
+                <li>From Email Address</li>
+            </ul>
+            <form action="" id="smtp-form" method="post">
+                <div class="form-group mt-3">
+                    <label for="smtp-server">SMTP Server</label>
+                    <input type="text" id="smtp-server" name="smtp_server" required class="form-control" placeholder="ex: smtp.example.com">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="smtp-port">SMTP Port</label>
+                    <input type="number" id="smtp-port" name="smtp_port" required class="form-control" placeholder="ex: 587">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="smtp-port">SMTP ENCRYPTION</label>
+                    <input type="text" id="smtp-encryption" name="smtp_encryption" required class="form-control" placeholder="ex: tls or ssl">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="smtp-username">SMTP Username</label>
+                    <input type="text" id="smtp-username" name="smtp_username" required class="form-control" placeholder="ex: example@example.com">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="smtp-password">SMTP Password</label>
+                    <input type="password" id="smtp-password" name="smtp_password" required class="form-control" placeholder="ex: password">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="from-email">From Email Address</label>
+                    <input type="email" id="from-email" name="from_email" required class="form-control" placeholder="ex: jone@example.com">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="from-email">From Name</label>
+                    <input type="text" id="from-name" name="from_name" required class="form-control" placeholder="ex: Jone">
+                </div>
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>
+

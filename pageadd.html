@@ -1,0 +1,315 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="mb-2"><g-t>add</g-t> <g-t>page</g-t></h3>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="widget-wrapper">
+            <div class="container-xxl flex-grow-1 container-p-y">
+                <form action="" id="addPageForm" novalidate method="post" enctype="multipart/form-data">
+
+
+
+                    <div class="col-lg-12 d-flex">
+                        <div class="widget-content">
+                            <div class="row form-input pb-4">
+                                <div class="col-lg-12">
+                                    <div class="mb-6 fv-row col-md-6">
+                                        <label class="form-label required" for="title"><g-t>Title</g-t></label>
+                                        <input type="text" name="title" maxlength="30" minlength="3" required placeholder="Title"
+                                            class="form-control mb-2 required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-6 fv-row col-md-6">
+                                        <label class="form-label required" for="slug"><g-t>slug</g-t></label>
+                                        <input type="text" name="slug" maxlength="30" minlength="3" required placeholder="e.g home"
+                                            class="form-control mb-2 required">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="d-flex gap-4">
+                                            <div>
+                                                <button class="btn btn-secondary mb-2" type="button" id="widgets">Widgets</button>
+                                            </div>
+                                            <div class="d-none">
+                                                <button class="btn btn-secondary mb-2" type="button" id="dynamicforms">Forms</button>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-4">
+                                            <div class="mb-3  d-none page_type">
+                                                <label class="form-label" for="page_type">Page Type</label>
+                                                <select class="form-select" id="page_type" name="page_type" onchange="handlePageTypeChange(this)">
+                                                    <option value="">Select Page Type</option>
+                                                </select>
+                                            </div>
+                                            <div class="toggle-flex">
+                                                <label class="form-label" for="slug"><g-t>Exclude Default Header</g-t></label>
+                                                <label class="switch">
+                                                    <input type="checkbox" class="switch-input" name="default_header" value="1" role="switch" id="switch1">
+                                                    <span class="switch-toggle-slider">
+                                                    <span class="switch-on"></span>
+                                                    <span class="switch-off"></span>
+                                                    </span> 
+                                                </label>
+                                            </div>
+                                            <div class="toggle-flex">
+                                                <label class="form-label" for="default_footer"><g-t>Exclude Default Footer</g-t></label>
+                                                <label class="switch">
+                                                    <input type="checkbox" class="switch-input" name="default_footer" value="1" role="switch" id="switch2">
+                                                    <span class="switch-toggle-slider">
+                                                    <span class="switch-on"></span>
+                                                    <span class="switch-off"></span>
+                                                    </span> 
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-6 fv-row col-md-12">
+                                        <label class="form-label required" for="">Content</label>
+                                        <textarea name="content" minlength="10" class="form-control mb-2" id="editorCk"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-6 fv-row col-md-12">
+                                        <label class="form-label">Custom Js</label>
+                                        <textarea name="custom_js" rows="10" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-12">
+
+
+                                    <div class="widget-content d-flex flex-wrap-sm">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="nav-seo-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#nav-seo" type="button" role="tab"
+                                                    aria-controls="nav-seo" aria-selected="true">SEO</button>
+                                            </li>
+                                            <li>
+                                                <button class="nav-link" id="nav-social-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#nav-social" type="button" role="tab"
+                                                    aria-controls="nav-social" aria-selected="true">Social</button>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="tab-content" id="nav-tabContent">
+                                            <div class="tab-pane fade show active" id="nav-seo" role="tabpanel"
+                                                aria-labelledby="nav-seo-tab">
+
+
+                                                <div class="row gap-lg-0 gap-5">
+                                                    <div class="col-lg-12">
+                                                        <div class="mb-6 fv-row col-md-12">
+                                                            <label class="form-label"
+                                                                for="meta_title"><g-t>Meta Title</g-t></label>
+                                                            <input type="text" minlength="3" name="meta_title" required
+                                                                placeholder="Meta Title"
+                                                                class="form-control mb-2 required">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="mb-6 fv-row col-md-12">
+                                                            <label class="form-label" for="">Meta
+                                                                Description</label>
+                                                            <textarea name="meta_description" required rows="4"
+                                                             minlength="3"
+                                                                placeholder="Meta Description"
+                                                                class="form-control mb-2 required"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <div class="tab-pane fade" id="nav-social" role="tabpanel"
+                                                aria-labelledby="nav-social-tab">
+
+
+                                                <div class="row gap-lg-0 gap-5">
+                                                    <div class="accordion" id="accordionExample">
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="headingOne">
+                                                                <button class="accordion-button" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                                                    aria-controls="collapseOne">
+                                                                    <i class="ri-bar-chart-fill ri-20px me-2"></i>
+                                                                    Social media appearance
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseOne" class="accordion-collapse collapse"
+                                                                aria-labelledby="headingOne"
+                                                                data-bs-parent="#accordionExample">
+                                                                <div class="accordion-body">
+                                                                    <div class="row gap-lg-0 gap-5">
+                                                                        <div class="col-lg-12">
+                                                                            <div class="mb-6 fv-row col-md-6">
+                                                                                <label class="form-label"
+                                                                                    for="og_title"><g-t>Social
+                                                                                        title</g-t></label>
+                                                                                <input type="text" name="og_title"
+                                                                                    class="form-control mb-2">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <div class="mb-6 fv-row col-md-6">
+                                                                                <label class="form-label"
+                                                                                    for="og_description"><g-t>Social
+                                                                                        description</g-t></label>
+                                                                                <textarea name="og_description"
+                                                                                    rows="4"
+                                                                                    class="form-control mb-2"></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="mb-6 fv-row col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label class="form-label"
+                                                                                    for="">Social image
+                                                                                    <span></span></label>
+                                                                                <div
+                                                                                    class="input-group custome-filemanager">
+                                                                                    <div class="input-group-prepend">
+                                                                                        <div
+                                                                                            class="input-group-text bg-soft-secondary font-weight-medium">
+                                                                                            Browse
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="form-control file-amount">
+                                                                                        Choose File</div>
+                                                                                    <input type="hidden" name="og_image"
+                                                                                        class="selected-files">
+                                                                                </div>
+                                                                                <div
+                                                                                    class="d-flex flex-wrap gap-4 pt-4 filemanager-image-preview">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="headingTwo">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseTwo" aria-expanded="false"
+                                                                    aria-controls="collapseTwo">
+                                                                    <i class="ri-twitter-x-line me-2"></i> Appearance
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                                aria-labelledby="headingTwo"
+                                                                data-bs-parent="#accordionExample">
+                                                                <div class="accordion-body">
+                                                                    <div class="row gap-lg-0 gap-5">
+                                                                        <div class="col-lg-12">
+                                                                            <div class="mb-6 fv-row col-md-6">
+                                                                                <label class="form-label"
+                                                                                    for="x_title"><g-t>title</g-t></label>
+                                                                                <input type="text" name="x_title"
+                                                                                    required
+                                                                                    class="form-control mb-2 required">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <div class="mb-6 fv-row col-md-6">
+                                                                                <label class="form-label"
+                                                                                    for="x_title"><g-t>description</g-t></label>
+                                                                                <textarea name="x_description" required
+                                                                                    rows="4"
+                                                                                    class="form-control mb-2 required"></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="mb-6 fv-row col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label class="form-label" for="">
+                                                                                    <g-t>image</g-t></label>
+                                                                                <div
+                                                                                    class="input-group custome-filemanager">
+                                                                                    <div class="input-group-prepend">
+                                                                                        <div
+                                                                                            class="input-group-text bg-soft-secondary font-weight-medium">
+                                                                                            Browse
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="form-control file-amount">
+                                                                                        Choose File</div>
+                                                                                    <input type="hidden" name="x_image"
+                                                                                        class="selected-files">
+                                                                                </div>
+                                                                                <div
+                                                                                    class="d-flex flex-wrap gap-4 pt-4 filemanager-image-preview">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-lg-12 d-flex justify-content-end gap-3 align-items-center">
+                                            <button class="btn btn-primary">Save</button>
+                                        </div>
+
+
+                                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- shortcodemodal -->
+    <div class="modal" tabindex="-1" id="shortcodeModal">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-2">Shortcode</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row shortcode-item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- shortcodeattr -->
+    <div class="modal" tabindex="-1" id="shortcodeAttr">
+        <div class="modal-dialog modal-dialog-scrollable modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mb-2">Shortcode</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row shortcodeAttr-item">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

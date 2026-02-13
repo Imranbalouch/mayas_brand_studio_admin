@@ -1,0 +1,239 @@
+<style>
+    table.dataTable tbody tr.odd td.dataTables_empty::before {
+        content: none !important;
+    }
+</style>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <!-- DataTable with Buttons -->
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="mb-2"><g-t>staff</g-t></h3>
+                </div>
+                <div class="col-md-6 d-flex justify-content-start justify-content-md-end align-items-baseline">
+                    <a href="javascript:;" id="btn_new" class="btn btn-primary ms-lg-0 ms-auto" style="display: none;"><svg class="me-2"
+                            width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.00024 2V14.0002" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 8.00006H14.0002" stroke="white" stroke-width="1.7" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <g-t>add_new</g-t></a>
+                </div>
+            </div>
+        </div>
+        <div class="card-datatable table-responsive pt-0">
+            <table class="datatables-basic table table-bordered table" id="Table_View">
+                <thead>
+                    <tr>
+                        <th width="5%"></th>
+                        <th width="25%"><g-t>name</g-t></th>
+                        <th width="25%"><g-t>email</g-t></th>
+                        <th width="25%"><g-t>role</g-t></th>
+                        <th width="20%"><g-t>status</g-t></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Data will be populated here via AJAX -->
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Edit Modal Start  -->
+    <div id="modify_Modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="popup_title"></h5>
+
+                </div>
+                <hr>
+                <form id="create_form">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12">
+                                <div>
+
+                                    <div class="form-group mt-4 mx-2 rtl-d-flxw-100">
+                                        <input id="txt_id" type="hidden" class="required form-label">
+                                        <div class="mb-6 fv-row col-md-12">
+                                            <label class="form-label required"
+                                                for="txt_first_name"><g-t>first_name</g-t></label>
+                                            <input type="text" placeholder="Firstname" maxlength="30" minlength="3" class="form-control mb-2" id="txt_first_name"
+                                                name="txt_first_name" required>
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12">
+                                            <label class="form-label"
+                                                for="txt_last_name"><g-t>last_name</g-t></label>
+                                            <input type="text" placeholder="Lastname" maxlength="40" minlength="3" class="form-control mb-2" id="txt_last_name"
+                                                name="txt_last_name">
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12">
+                                            <label class="form-label required" for="txt_email"><g-t>email</g-t></label>
+                                            <input type="email" placeholder="Email" maxlength="254" class="form-control mb-2" id="txt_email"
+                                                name="txt_email" required>
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12 custom-tel">
+                                            <label class="form-label required" for="txt_phone"><g-t>Phone</g-t></label>
+                                            <input class="form-control mb-2" placeholder="Phone" type="tel" name="intel-phone" id="txt_phone"
+                                            oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                                            <span class="error-txt"></span>
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12">
+                                            <label class="required form-label">Role</label>
+                                            <select class="selectpicker w-100" data-style="btn-default"
+                                                data-live-search="true" name="txt_role_id" id="txt_role_id" value=""
+                                                required=""></select>
+
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12">
+                                            
+                                            <div class="d-flex align-items-start align-items-sm-center gap-6">
+                                                <img src="" alt="" class="w-px-100 h-px-100 rounded-4 d-none rounded-circle" id="uploadedAvatar_Add" />
+                                                <input hidden id="icon_value">
+                                                <div class="button-wrapper">
+                                                  <label for="FileUploadSingle" class="btn btn-primary me-3 mb-4" tabindex="0">
+                                                    <span class="d-none d-sm-block">Upload photo</span>
+                                                    <i class="ri-upload-2-line d-block d-sm-none"></i>
+                                                    <input type="file" class="account-file-input" id="FileUploadSingle" hidden
+                                                      accept="image/png, image/jpeg, image/jpg, image/svg" />
+                                                  </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-6 fv-row col-md-3">
+                                            <label class="form-label" for="ck_active" id="active_lbl">
+                                                <g-t>active</g-t></label>
+                                            <input type="checkbox" class="form-check-input" id="ck_active"
+                                                name="ck_active">
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12 hide" id="staff_password">
+                                            <label class="form-label required"
+                                                for="txt_password"><g-t>password</g-t></label>
+                                            <input type="password" placeholder="Password" class="form-control" id="txt_password"
+                                                name="txt_password" required>
+
+                                            <input type="checkbox" class="form-check-input" id="showPassword">
+                                            <label class="form-label mb-0" style="vertical-align: bottom;"
+                                                for="showPassword"><g-t>show_password</g-t> </label>
+                                            <div id="progressContainer">
+                                                <div id="progressBar"></div>
+                                            </div>
+                                            <p id="message"></p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="margin-top: 20px;">
+                        <div class="col-md-12" style="text-align:right;">
+                            <button id="btn_cls" type="button" value="Close" onclick="discon()"
+                                class="btn btn-outline-primary waves-effect" data-bs-dismiss="modal">Close</button>
+                            <button id="btn_sav" type="button" value="Save"
+                                class="btn btn-primary waves-effect waves-light" onclick="save_record();">Save</button>
+                            <button type="button" id="btn_upd" onclick="update_record(); return false;"
+                                class="btn btn-primary waves-effect waves-light">update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Modal End  -->
+
+
+
+
+    <!-- Password Modal Start  -->
+    <div id="password_Modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="popup_title_password"></h5>
+                </div>
+                <hr>
+                <form id="change_form">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12">
+                                <div>
+
+                                    <div class="form-group mt-4 mx-2 rtl-d-flxw-100">
+                                        <input id="txt_id_password" type="hidden" class="required form-label">
+                                        <div class="mb-6 fv-row col-md-12">
+                                            <label class="form-label "
+                                                for="txt_first_name"><g-t>first_name</g-t></label>
+                                            <input type="text" class="form-control mb-2" id="txt_first_name_password"
+                                                disabled>
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12">
+                                            <label class="form-label " for="txt_last_name"><g-t>last_name</g-t></label>
+                                            <input type="text" class="form-control mb-2" id="txt_last_name_password"
+                                                disabled>
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12">
+                                            <label class="form-label " for="txt_email"><g-t>email</g-t></label>
+                                            <input type="email" class="form-control mb-2" id="txt_email_password"
+                                                disabled>
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12">
+                                            <label class="form-label " for="txt_phone"><g-t>phone</g-t></label>
+                                            <input type="tel" class="form-control mb-2" id="txt_phone_password"
+                                                disabled>
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12">
+                                            <label class="  form-label">Role</label>
+                                            <select class="selectpicker w-100" data-style="btn-default"
+                                                id="txt_role_id_password" disabled></select>
+
+                                        </div>
+
+                                        <div class="mb-6 fv-row col-md-12 hide">
+                                            <label class="form-label required"
+                                                for="txt_password_change"><g-t>change_password</g-t></label>
+                                            <input type="password" class="form-control" id="txt_password_change"
+                                                name="txt_password_change" required>
+
+                                            <input type="checkbox" class="form-check-input" id="showPassword_change">
+                                            <label class="form-label mt-2" style="vertical-align: bottom;"
+                                                for="showPassword_change"><g-t>show_password</g-t> </label>
+
+                                            <div id="progressContainer_change">
+                                                <div id="progressBar_change"></div>
+                                            </div>
+                                            <p id="message_change"></p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="margin-top: 20px;">
+                        <div class="col-md-12" style="text-align:right;">
+                            <button id="btn_cls_password" type="button" value="Close" onclick="discon()"
+                                class="btn btn-outline-primary waves-effect waves-light" data-bs-dismiss="modal">Close</button>
+                            <button id="btn_upd_password" type="button" value="Update"
+                                class="btn btn-primary waves-effect waves-light"
+                                onclick="update_password();">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Password Modal End  -->

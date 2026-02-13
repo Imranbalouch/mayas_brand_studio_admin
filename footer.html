@@ -1,0 +1,95 @@
+ <!-- Footer -->
+            <span id="footer"></span> 
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl">
+                <div
+                  class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                  <div class="text-body mb-2 mb-md-0">
+                    ©
+                    <script>
+                      //document.write(new Date().getFullYear());
+                    </script>
+                    Insta Manage, made with <span class="text-danger"><i class="tf-icons ri-heart-fill"></i></span> by
+                    <a href="#" target="_blank" class="footer-link">DG</a>
+                  </div>
+                  <div class="d-none d-lg-inline-block">
+                     
+
+                    <a href="#" target="_blank" class="footer-link d-none d-sm-inline-block"
+                      >Support</a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+
+      <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+      <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <!-- <script src="assets/vendor/libs/jquery/jquery.js"></script> -->
+   
+    
+    <!-- <script src="assets/js/tables-datatables-basic.js"></script> -->
+
+    <script>
+      $(document).ready(function() {      
+        lang='en'; 
+        dir='ltr'; 
+      //if(checkfile(page_id + '.html')==true){
+          loadCustomScript('./assets/js/'+page_id+'.js'); 
+      ///}
+      $('#selected_lang').html(lang);
+      document.body.dir = dir; 
+      
+          // setTimeout(function() { 
+          //     $('.select2').select2();
+          // }, 2000);
+      
+      
+      });
+      
+      // var handleSelect2 = function() {
+      //     alert();
+      //     setTimeout(function() {
+      //         if ($().select2) {
+      //             $('.select2').select2({
+      //                 placeholder: "Select",
+      //                 allowClear: true
+      //             });
+      //         }
+      //     }, 2000);
+      //     }
+      function validationHelper(){
+      $('input[type="text"][required]').on('input', function () {
+         // console.log($(this).val());
+              if ($(this).val() != '') {
+                  $(this).parents('.form-group').removeClass('error');
+                  //$(this).parent().children('.error-txt').remove();
+              }
+          });
+      
+          $('textarea[required]').on('input', function () {
+              if ($(this).val() != '') {
+                  $(this).parents('.form-group').removeClass('error');
+                  //$(this).parent().children('.error-txt').remove();
+              }
+          });
+      }
+      
+       </script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+
+
+<div class="container-xxl flex-grow-1 container-p-y"> 
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6"> 
+                    <h3 class="mb-2"><g-t>edit</g-t> <g-t>module</g-t></h3>
+                </div> 
+            </div>
+       </div> 
+ <hr>
+    <div class="widget-wrapper">
+    <div class="container-xxl flex-grow-1 container-p-y"> 
+    <form action="" id="editModuleForm" method="post" enctype="multipart/form-data">
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="widget-content"> 
+                    <div class="row form-input pb-4">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <label class="form-label required" for="name"><g-t>name</g-t></label>
+                            <input type="text" name="name" required placeholder="Name" onkeyup="makeSlug(this,'moduleclass')" class="form-control mb-2 required">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12"> 
+                            <label class="form-label required" for="moduleclass"><g-t>Class</g-t></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control variable" name="moduleclass" placeholder="class" readonly>
+                                <button class="btn btn-outline-primary waves-effect" type="button" onclick="copyInputText(this)" id="button-addon2">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 col-sm-12">
+                            <div class="mb-6 fv-row col-md-12">     
+                                <label class="form-label required" for="moduletype">Module Type</label>
+                                <select name="moduletype" onchange="moduleType(this)" required class="form-select select2" id="">
+                                  <option value="gerneral" selected>Gerneral</option>
+                                  <option value="api">Api</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="form-label">Add Fields</label>
+                                <div class="addfield_target sortable_element">
+                                    <div class="row gutters-5" id="row">
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                            <div class="mb-6 fv-row col-md-12">     
+                                                <label class="form-label required" for="field_name[]"><g-t>name</g-t></label>
+                                                <input type="text" name="field_name[]" onkeyup="fieldName(this)" class="form-control mb-2 required" required >
+                                                <input type="text" name="fieldnamelbl[]" class="form-control mb-2 m-input m-2 d-none">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-12 col-sm-12">
+                                            <div class="mb-6 fv-row col-md-12">     
+                                                <label class="form-label required" for="field_type[]">Field Type</label>
+                                                <select name="field_type[]" onchange="fieldType(this)" required class="form-select select2" id="">
+                                                  <option value="" selected disabled>Please select field type</option>
+                                                  <option value="text">Text</option>
+                                                  <option value="textarea">Textarea</option>
+                                                  <option value="image">Image</option> 
+                                                  <option value="video">Video</option> 
+                                                </select>
+                                              </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center"> 
+                                            <div class="input-group">
+                                                <input type="text" class="form-control variable" placeholder="Variable" readonly>
+                                                <button class="btn btn-outline-primary waves-effect" type="button" onclick="copyInputText(this)" id="button-addon2">Copy</button>
+                                            </div>
+                                            <div class="col-auto my-3 mx-8">
+                                                <label class="form-label">Required</label>
+                                                <label class="switch">
+                                                    <input type="hidden" name="is_required[]" value="0">
+                                                    <input type="checkbox" name="is_required[]" onchange="toggleIsRequired(this)" class="switch-input" value="1" role="switch">
+                                                    <span class="switch-toggle-slider">
+                                                    <span class="switch-on"></span>
+                                                    <span class="switch-off"></span>
+                                                    </span> 
+                                                </label>
+                                            </div>
+                                            <div class="col-auto my-8"> 
+                                                <button type="button" class="btn btn-danger ms-2" data-toggle="remove-parent" data-parent=".row">
+                                                    <i class="ri-close-line"></i>
+                                                </button>
+                                            </div>
+                                           <div class="drag-handle" style="cursor: move; padding: 5px;">
+                                                <i class="ri-drag-move-line"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary btn-sm"
+                                    data-toggle="add-more"
+                                    data-content='<div class="row gutters-5" id="row">
+                                        <div class="col-lg-4 col-md-12 col-sm-12">
+                                            <div class="mb-6 fv-row col-md-12">     
+                                                <label class="form-label required" for="field_name[]"><g-t>name</g-t></label>
+                                                <input type="text" name="field_name[]" onkeyup="fieldName(this)" class="form-control mb-2 required" required >
+                                                <input type="text" name="fieldnamelbl[]" class="form-control mb-2 m-input m-2 d-none">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-12 col-sm-12">
+                                            <div class="mb-6 fv-row col-md-12">     
+                                                <label class="form-label required" for="field_type[]">Field Type</label>
+                                                <select name="field_type[]" onchange="fieldType(this)" required class="form-select select2" id="">
+                                                  <option value="" selected disabled>Please select field type</option>
+                                                  <option value="text">Text</option>
+                                                  <option value="textarea">Textarea</option>
+                                                  <option value="image">Image</option> 
+                                                  <option value="video">Video</option> 
+                                                </select>
+                                              </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center"> 
+                                            <div class="input-group">
+                                                <input type="text" class="form-control variable" placeholder="Variable" readonly>
+                                                <button class="btn btn-outline-primary waves-effect" type="button" onclick="copyInputText(this)" id="button-addon2">Copy</button>
+                                            </div>
+                                            <div class="col-auto my-3 mx-8">
+                                                <label class="form-label">Required</label>
+                                                <label class="switch">
+                                                    <input type="hidden" name="is_required[]" value="0">
+                                                    <input type="checkbox" name="is_required[]" onchange="toggleIsRequired(this)" class="switch-input" value="1" role="switch">
+                                                    <span class="switch-toggle-slider">
+                                                    <span class="switch-on"></span>
+                                                    <span class="switch-off"></span>
+                                                    </span> 
+                                                </label>
+                                            </div>
+                                            <div class="col-auto my-8"> 
+                                                <button type="button" class="btn btn-danger ms-2" data-toggle="remove-parent" data-parent=".row">
+                                                    <i class="ri-close-line"></i>
+                                                </button>
+                                            </div>
+                                           <div class="drag-handle" style="cursor: move; padding: 5px;">
+                                                <i class="ri-drag-move-line"></i>
+                                            </div>
+                                        </div>
+                                    </div>'
+                                    data-target=".addfield_target">
+                                    Add New
+                                </button>
+                                <hr>
+                            </div>
+                        </div>
+                        <div id="language_selecter" class="col-lg-2 col-md-12 col-sm-12 d-none">
+                            <div class="mb-6 fv-row col-md-12">     
+                                <label class="form-label" for="language">Language</label>
+                                <select name="language" required class="form-select select2" id="language">
+                                    <option value="" selected disabled>Please select language</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="required">Html Code</label>
+                                <textarea name="html_code" rows="10" required class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 d-flex justify-content-end gap-3 align-items-center">
+                        <button class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

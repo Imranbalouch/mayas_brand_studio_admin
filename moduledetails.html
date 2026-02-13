@@ -1,0 +1,84 @@
+<style>
+
+  .readonly{
+     pointer-events: none;
+  }
+</style>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <!-- DataTable with Buttons -->
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+            <div class="col-md-6"> 
+            <!-- <h5 class="card-title mb-4"><g-t>module</g-t> <g-t>details</g-t></h5> -->
+            <h3 class="mb-2" id="module_name">All Modules</h3>
+            <div class="col-md-3 mt-3">
+                <select name="global_language" id="global_language" class="form-select">
+                    <option value="" selected disabled>Please select language</option>
+                </select>
+            </div>
+            </div>
+            <div class="col-md-6 d-flex justify-content-start justify-content-md-end align-items-baseline"> 
+            <a href="javascript:;" id="btn_new" class="btn btn-primary ms-lg-0 ms-auto"><svg class="me-2" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.00024 2V14.0002" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2 8.00006H14.0002" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <g-t>add_new</g-t></a>
+            </div>
+        </div>
+        <input type="hidden" id="model_view" value="">
+          </div>
+          <div class="card-datatable table-responsive pt-0">
+            <table class="datatables-basic table table-bordered table" id="Table_View"> 
+                <thead>
+                    <tr id="table_header"> 
+                        <th width="5%"></th>
+                        <th width="70%"><g-t>name</g-t></th> 
+                        <th width="20%"><g-t>action</g-t></th>  
+                    </tr>
+                </thead>
+        
+          <tbody>
+            <!-- Data will be populated here via AJAX -->
+        </tbody>
+    
+        </table>
+      </div>
+    </div>
+     
+
+<!-- shortcodeattr -->
+<div class="modal" tabindex="-1" id="shortcodeAttr">
+    <div class="modal-dialog modal-dialog-scrollable modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="mb-2">Details</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row shortcodeAttr-item">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+ 
+       
+ 
+<!-- shortcodeattr -->
+<!-- <div class="modal" tabindex="-1" id="shortcodeAttr">
+    <div class="modal-dialog modal-dialog-scrollable modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row shortcodeAttr-item">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div> -->

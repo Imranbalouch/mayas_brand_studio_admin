@@ -1,0 +1,75 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <!-- DataTable with Buttons -->
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+            <div class="col-md-6"> 
+            <h3 class="mb-2"><g-t>permissions</g-t></h3>
+            </div> 
+        </div>
+     <hr>
+    <div class="widget-wrapper">
+    <div class="widget-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="widget-content">
+                    <div class="table-responsive1">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h3 class="mb-2"><g-t>all_permissions</g-t></h3>
+                            <div class="d-flex align-items-center gap-4 justify-content-end">
+                                
+                                
+                                <div class="select2-parent">
+                                    <label class="form-label"><g-t>user_role</g-t></label>
+                                     
+                                        <select class="  selectpicker w-400" data-style="btn-default" name="cmb_role_id"   data-placeholder="User Role" required id="cmb_role_id">
+ 
+                                    </select>
+                                     
+                                </div>
+                                <div class="select2-parent">
+                                    <label class="form-label"><g-t>user_role_copy</g-t></label> 
+                                        <select class="  selectpicker w-400" data-style="btn-default" name="cmb_role_id_copy"  data-placeholder="Copy User Role" required id="cmb_role_id_copy">
+                              
+                                    </select>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <form name="permissions" id="permissions" method="post">
+                            <hr>
+                        <table id="Table_View" class="custom-table top-projects datatable display nowrap mt-3">
+                            <thead> 
+                                <tr id="tbl_header">
+                                </tr>
+                            </thead>
+                           
+                            <tbody id="tbl_body"> 
+                                <tr>
+                                    <td class="center"> 
+                                        <strong><g-t>please_select_role</g-t></strong>
+                                    </td> 
+                                </tr>  
+                            </tbody>
+                           
+                        </table> 
+                        
+                    </form>
+
+                    <div class="col-md-12" style="text-align:right;">
+                        <hr>
+                        <button id="btn_upd" type="button" style="display: none;"   class="btn btn-primary waves-effect waves-light" onclick="update_record();" >Update</button>  
+                    </div> 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+
+ 
+ 

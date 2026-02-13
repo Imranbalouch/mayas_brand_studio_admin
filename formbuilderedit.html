@@ -1,0 +1,179 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="mb-2"><g-t>edit</g-t> <g-t>formbuilder</g-t></h3>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="widget-wrapper">
+            <div class="container-xxl flex-grow-1 container-p-y">
+
+                <form action="" id="editFormBuilder" method="post">
+                    <div class="widget-content d-flex flex-wrap-sm">
+                        <ul class="nav nav-tabs" id="add-products-navs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="nav-general-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-general" type="button" role="tab" aria-controls="nav-general"
+                                    aria-selected="true">General</button>
+                            </li>
+                            <li class="d-none">
+                                <button class="nav-link" id="nnav-file-builder-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-file-builder" type="button" role="tab"
+                                    aria-controls="nav-file-builder" aria-selected="true">Form Builder</button>
+                            </li>
+                            <!-- <li>
+                                <button class="nav-link" id="nnav-file-email-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-file-email" type="button" role="tab"
+                                    aria-controls="nav-file-email" aria-selected="true">Email Tempalte</button>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div class="product-content">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade active show" id="nav-general" role="tabpanel"
+                                aria-labelledby="nav-general-tab">
+                                <div class="row gap-lg-0 gap-5">
+                                    <div class="col-lg-12 form-input mt-3">
+                                        <div class="row">
+                                            <div class="mb-6 fv-row col-md-6">
+                                                <label class="form-label required" for="form_name"><g-t>Form
+                                                        Name</g-t></label>
+                                                <input type="text" class="form-control mb-2 required" name="form_name"
+                                                    required="" placeholder="Form name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="mb-6 fv-row col-md-6">
+                                                <label class="form-label required" for="is_recaptcha"><g-t>Use Google
+                                                        Recaptcha</g-t></label>
+                                                <div class="d-flex align-items-center gap-3">
+
+                                                    <div class="form-check form-check-inline mt-4">
+                                                        <input class="form-check-input" type="radio" name="is_recaptcha"
+                                                            id="is_recaptcha" value="1">
+                                                        <label class="form-check-label" for="is_recaptcha">Yes</label>
+                                                    </div>
+
+                                                    <div class="form-check form-check-inline mt-4">
+                                                        <input class="form-check-input" type="radio" name="is_recaptcha"
+                                                            id="is_recaptcha" value="0" checked="">
+                                                        <label class="form-check-label" for="is_recaptcha">No</label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <div class="addfield_target">
+                                                    <div class="row gutters-5" id="row">
+                                                        <div class="mb-6 fv-row col-md-6">
+                                                            <label class="form-label required" for="to_email[]"><g-t>To
+                                                                    Email</g-t></label>
+                                                            <input type="email" name="to_email[]"
+                                                                class="form-control mb-2"
+                                                                required
+                                                                placeholder="example@example.com">
+                                                        </div>
+                                                        <div class="col-1 my-7">
+                                                            <button type="button" class="mt-1 btn btn-danger"
+                                                                data-toggle="remove-parent" data-parent=".row">
+                                                                <i class="ri-close-line"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                    data-toggle="add-more" data-content='<div class="row gutters-5" id="row"> 
+                                                    <div class="mb-6 fv-row col-md-6">     
+                                                        <label class="form-label required" for="to_email[]"><g-t>To Email</g-t></label>
+                                                        <input type="email" required name="to_email[]" class="form-control mb-2" placeholder="example@example.com" >
+                                                      </div> 
+                                                    <div class="col-1 my-7"> 
+                                                        <button type="button" class="mt-1 btn btn-danger" data-toggle="remove-parent" data-parent=".row">
+                                                            <i class="ri-close-line"></i>
+                                                        </button>
+                                                    </div>
+                                            </div>' data-target=".addfield_target">
+                                                    Add New
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="nav-file-builder" role="tabpanel"
+                                aria-labelledby="nav-general-tab">
+                                <div class="row gap-lg-0 gap-5">
+                                    <div class="col-lg-12 form-input mt-3">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <div id="fb-editor"></div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="details">
+                                            <input type="hidden" name="formrender">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="tab-pane fade show" id="nav-file-email" role="tabpanel"
+                                aria-labelledby="nav-file-emails">
+                                <div class="row gap-lg-0 gap-5">
+                                    <div class="col-lg-6 form-input mt-3">
+                                        <div class="row">
+                                            <div class="mb-6 fv-row col-md-12">
+                                                <label class="form-label required" for="form_name"><g-t>Template
+                                                        Name</g-t></label>
+                                                <input type="text" class="form-control mb-2 required"
+                                                    name="template_name" required="" placeholder="Tempalte Name">
+                                            </div>
+                                        </div>
+                                        <div class="mb-6 fv-row col-md-12">
+                                            <label class="form-label required"
+                                                for="form_name"><g-t>Subject</g-t></label>
+                                            <input type="text" class="form-control mb-2 required" name="subject"
+                                                required="" placeholder="Subject">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="container-fluid border rounded p-3 shadow">
+                                            <div class="row">
+                                                <h6 class="fw-semibold" id="h6_availabelFields">Available merge fields</h6>
+                                                <hr>
+                                            </div>  
+                                            <div class="row my-3">
+                                                <div class="col-lg-12">
+                                                    <div id="email-template-client-opts-box"> 
+                                                    </div> 
+                                                </div>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="mb-6 fv-row col-md-11">
+                                            <label class="form-label required" for="">Message</label>
+                                            <textarea name="message" class="form-control mb-2" id="editorCk"></textarea>
+                                        </div>
+                                    </div>
+                                </div>   
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-12 d-flex justify-content-end gap-3 align-items-center">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+
+    <div class="fb-render d-none"></div>
+</div>
