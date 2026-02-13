@@ -11,6 +11,16 @@
                 <div class="col-md-6">
                     <h3 class="mb-2"><g-t>Activity Logs</g-t></h3>
                 </div>
+                <div id="Table_View_filter" class="table-search-main dataTables_filter" style="display: flex;">
+                    <button class="cursor" onclick="return false;">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.66671 14C11.1645 14 14 11.1645 14 7.66666C14 4.16886 11.1645 1.33333 7.66671 1.33333C4.1689 1.33333 1.33337 4.16886 1.33337 7.66666C1.33337 11.1645 4.1689 14 7.66671 14Z" stroke="black" stroke-opacity="0.65" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M14.6667 14.6667L13.3334 13.3333" stroke="black" stroke-opacity="0.65" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    </button>
+                    <input type="text" id="custom_search" placeholder="Type &amp; press enter for search" required="">
+                    
+                </div>
             </div>
         </div>
         <div class="card-datatable table-responsive pt-0">
@@ -32,6 +42,9 @@
 
             </table>
         </div>
+         <div class="dataTables_info" id="product_count" role="status" aria-live="polite" style="    margin-left: 25px;
+    font-size: medium;"></div>
+        <div id="pagination" class="pagination-controls"></div>
     </div>
 
 
