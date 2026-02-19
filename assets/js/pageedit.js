@@ -52,6 +52,8 @@ function editPage(id,lang = null) {
                     }
                     if (data.description != null && data.description != "") {
                         setEditorValue(data.description);
+                        renderAllWidgetsInIframe(data.description);
+
                     }
                 }
             },
